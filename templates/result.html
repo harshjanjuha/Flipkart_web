@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block title %}
+Result  
+{% endblock%}
+
+{% block content %}
+<h2> Status: {{msg}} </h2> 
+<table class="table table-hover table-dark">
+    <thead>
+        <tr> 
+            <!-- Your Columns HERE -->
+            <th scope="col">Product</th>
+            <th scope="col">Name</th>
+            <th scope="col">Rating</th>
+            <th scope="col">Heading</th>
+            <th scope="col">Comment</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- Your rows inside the table HERE: -->
+      {%for review in reviews%}
+            <tr>
+                <td>{{ review['Product'] }}</td>
+                <td>{{ review['Name'] }}</td>
+                <td>{{ review['Rating'] }}</td>
+                <td>{{ review['CommentHeader'] }}</td>
+                <td>{{ review['Comment'] }}</td>
+            </tr>
+        {%endfor%}
+    </tbody>
+</table>
+{% endblock%}

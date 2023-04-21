@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block title %}
+Home Page 
+{% endblock%}
+
+{% block content %}
+<div class="cntnt">
+    <h1>Search</h1>
+    <div class="form">
+        <form action="/result" method="Post">
+            <input type="text" name="search" id="srch_content">
+            <input type="submit" value="Search">
+        </form>
+    </div>
+</div>
+{%endblock%}
