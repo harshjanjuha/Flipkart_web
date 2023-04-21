@@ -17,6 +17,7 @@ app = Flask(__name__)
 
 @app.route('/', methods=['GET'])
 @app.route('/home', methods=['GET'])
+@cross_origin()
 # function for homepage
 def homepage():
     return render_template('home.html')
@@ -25,6 +26,7 @@ def homepage():
 
 
 @app.route('/result', methods=['GET', 'POST'])
+@cross_origin()
 # function for result page
 def result():
     if request.method == 'POST':
